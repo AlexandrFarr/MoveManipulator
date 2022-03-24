@@ -6,7 +6,10 @@ using namespace std;
 //change of coordinates
 void ManipulatorSystem::changePoint(Manipulator* a, Point* p)
 {
-	double cx, cy;
+	a->set_x(p->get_x());
+	a->set_y(p->get_y());
+	
+	/*double cx, cy;
 
 	cx = p->get_x() - a->get_x();
 	cy = p->get_y() - a->get_y();
@@ -34,7 +37,7 @@ void ManipulatorSystem::changePoint(Manipulator* a, Point* p)
 		}
 	}
 	
-	
+	*/
 }
 
 //input array of parts
@@ -48,9 +51,9 @@ void ManipulatorSystem::entryMassivOfDetails(std::vector<Point>& vec)
 	for (int i = 0; i < n; i++)
 	{
 		double vx, vy;
-		std::cout << " ââåäèòå êîîðäèíàòó  x= ";
+		std::cout << " Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã³  x= ";
 		std::cin >> vx;
-		std::cout << "/n ââåäèòå êîîðäèíàòó  y= ";
+		std::cout << "/n Ã¢Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã®Ã°Ã¤Ã¨Ã­Ã Ã²Ã³  y= ";
 		std::cin >> vy;
 		Point P(vx, vy);
 		vec.push_back(P);
@@ -103,7 +106,7 @@ void ManipulatorSystem::showTablePath(std::vector<Point>& vec, std::vector<bool>
 		}
 	}
 
-	cout << "Èòåðàöèÿ\t";
+	cout << "ÃˆÃ²Ã¥Ã°Ã Ã¶Ã¨Ã¿\t";
 	for (int i = 0; i < boolvec.size(); i++)
 	{
 		cout << i + 1 << "\t" << "\t";
@@ -111,7 +114,7 @@ void ManipulatorSystem::showTablePath(std::vector<Point>& vec, std::vector<bool>
 	cout << endl;
 
 
-	cout << "Ìàíèïóëÿòîð1\t" << str1 << endl;
-	cout << "Ìàíèïóëÿòîð2\t" << str2 << endl;
+	cout << "ÃŒÃ Ã­Ã¨Ã¯Ã³Ã«Ã¿Ã²Ã®Ã°1\t" << str1 << endl;
+	cout << "ÃŒÃ Ã­Ã¨Ã¯Ã³Ã«Ã¿Ã²Ã®Ã°2\t" << str2 << endl;
 }
 
