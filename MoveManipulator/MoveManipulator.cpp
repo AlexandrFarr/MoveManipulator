@@ -55,7 +55,7 @@ int main()
                 if ((M1->proverkaEntry(massivCoordinate.at(i).get_x(), massivCoordinate.at(i).get_y()) == false) && (M2->proverkaEntry(massivCoordinate.at(i).get_x(), massivCoordinate.at(i).get_y()) == false))
                 {
 
-                    if ((sqrt((pow((massivCoordinate.at(i).get_x() - M1->get_x()), 2) + pow((massivCoordinate.at(i).get_y() - M1->get_y()), 2))) - M1->getRadius()) <= ((sqrt((pow((massivCoordinate.at(i).get_x() - M2->get_x()), 2) + pow((massivCoordinate.at(i).get_y() - M2->get_y()), 2)))) - M2->getRadius()))
+                    if ((sqrt((pow((massivCoordinate.at(i).get_x() - M1->get_x()), 2) + pow((massivCoordinate.at(i).get_y() - M1->get_y()), 2))) ) <= ((sqrt((pow((massivCoordinate.at(i).get_x() - M2->get_x()), 2) + pow((massivCoordinate.at(i).get_y() - M2->get_y()), 2)))) ))
                     {
                         Mang.changePoint(M1, &massivCoordinate.at(i));
                         pathManipulators.push_back(0);
