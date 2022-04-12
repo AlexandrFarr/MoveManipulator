@@ -1,4 +1,4 @@
-﻿
+
 #include <iostream>
 #include "Point.h"
 #include "ManipulatorSystem.h"
@@ -20,8 +20,9 @@ int main()
 
 
     // cteate Object of manipulatorSystem for operation with manupulators
-    ManipulatorSystem Mang;
-    Mang.entryMassivOfDetails(massivCoordinate);
+    //ManipulatorSystem Mang;
+    ManipulatorSystem* Mang = new ManipulatorSystem;
+    Mang->entryMassivOfDetails(massivCoordinate);
 
 
     // creating two manipulators
@@ -35,7 +36,7 @@ int main()
     M2->entry_x_y_r();
 
     //selecting an effective manipulator 
-    cout << "Проверка каким манипулятором пользоватья эффективнее " << endl;
+    cout << "Проверка каким манипулятором пользоватьcя эффективнее " << endl;
 
     for (int i = 0; i < massivCoordinate.size(); i++)
     {
@@ -57,12 +58,12 @@ int main()
 
                     if ((sqrt((pow((massivCoordinate.at(i).get_x() - M1->get_x()), 2) + pow((massivCoordinate.at(i).get_y() - M1->get_y()), 2))) ) <= ((sqrt((pow((massivCoordinate.at(i).get_x() - M2->get_x()), 2) + pow((massivCoordinate.at(i).get_y() - M2->get_y()), 2)))) ))
                     {
-                        Mang.changePoint(M1, &massivCoordinate.at(i));
+                        Mang->changePoint(M1, &massivCoordinate.at(i));
                         pathManipulators.push_back(0);
                     }
                     else
                     {
-                        Mang.changePoint(M2, &massivCoordinate.at(i));
+                        Mang->changePoint(M2, &massivCoordinate.at(i));
                         pathManipulators.push_back(1);
                     }
                 }
@@ -88,6 +89,8 @@ int main()
 
     
      //show table iteration and coordinates
-    Mang.showTablePath(massivCoordinate, pathManipulators);
+    Mang->showTablePath(massivCoordinate, pathManipulators);
+
+    delete M1,M2, Mang;
 
 }
